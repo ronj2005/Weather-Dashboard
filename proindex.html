@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/CSS/prostyle.css" />
+  </head>
+  <body>
+    <header class="nav-container">
+      <div class="nav-text">
+        <h1 class="nav-title">Weather Dashboard</h1>
+      </div>
+
+      <div class="container">
+        <div class="current-info">
+          <div class="date-container">
+            <div class="time" id="time">--:--</div>
+            <div class="date" id="date">Day, Month Date</div>
+
+            <div class="others" id="current-weather-items"></div>
+          </div>
+
+          <div class="place-container">
+            <div class="time-zone" id="time-zone">America/ Eastern</div>
+            <div id="country" class="country">US</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="container searchContainer">
+      <div class="search card card-body">
+        <h1 id="searchCity">Search for a city:</h1>
+        <p class="lead">Enter Your Location</p>
+        <input type="text" id="searchInput"
+          class="form-control" placeholder="Location"/>
+      </div>
+      <div class="container text-center mt-2">
+        <button class="btn btn-primary" id="submit">Search</button>
+      </div>
+
+        <!-- City Table List -->
+        <div class="list-group" id="cityList"></div>                    
+  <!-- Weather Information Column -->
+      <div class="col-9">
+        <div class="card" style="width: 100%;" id="weatherContainer"></div>
+        <div id="forecastContainer"></div>
+      </div>
+
+
+        <!-- <div id="profile"></div> -->
+    </div>
+
+<!-- Daily Forecast section -->
+    <div id="content"></div>
+
+    <div class="future-forecast">
+      <div class="today" id="current-temp">
+        <img
+          src="http://openweathermap.org/img/wn/10d@2x.png"
+          alt="weather icon"
+          class="w-icon"
+        />
+        <div class="other">
+          <div class="current-day" id="current-day">Today</div>
+          <!-- <div class="time" id="time">--:--</div> -->
+          <div class="temp">Day - 35.6&#176; F</div>
+          <div class="temp">Night - 25.6&#176; F</div>
+        </div>
+      </div>
+
+      <!-- Weekly Forecast section -->
+      <div class="weather-forecast" id="weather-forecast">
+        <div class="weather-forecast-item">
+          <div class="day">Mon</div>
+          <img
+            src="http://openweathermap.org/img/wn/10d@2x.png"
+            alt="weather icon"
+            class="w-icon"
+          />
+          <div class="temp">Day - 35.6&#176; F</div>
+          <div class="temp">Night - 25.6&#176; F</div>
+        </div>
+        <div class="weather-forecast-item">
+          <div class="day">Wed</div>
+          <img
+            src="http://openweathermap.org/img/wn/10d@2x.png"
+            alt="weather icon"
+            class="w-icon"
+          />
+          <div class="temp">Day - 35.6&#176; F</div>
+          <div class="temp">Night - 25.6&#176; F</div>
+        </div>
+        <div class="weather-forecast-item">
+          <div class="day">Thur</div>
+          <img
+            src="http://openweathermap.org/img/wn/10d@2x.png"
+            alt="weather icon"
+            class="w-icon"
+          />
+          <div class="temp">Day - 35.6&#176; F</div>
+          <div class="temp">Night - 25.6&#176; F</div>
+        </div>
+        <div class="weather-forecast-item">
+          <div class="day">Fri</div>
+          <img
+            src="http://openweathermap.org/img/wn/10d@2x.png"
+            alt="weather icon"
+            class="w-icon"
+          />
+          <div class="temp">Day - 35.6&#176; F</div>
+          <div class="temp">Night - 25.6&#176; F</div>
+        </div>
+        <div class="weather-forecast-item">
+          <div class="day">Sat</div>
+          <img
+            src="http://openweathermap.org/img/wn/10d@2x.png"
+            alt="weather icon"
+            class="w-icon"
+          />
+          <div class="temp">Day - 35.6&#176; F</div>
+          <div class="temp">Night - 25.6&#176; F</div>
+        </div>
+        <div class="weather-forecast-item">
+          <div class="day">Sun</div>
+          <img
+            src="http://openweathermap.org/img/wn/10d@2x.png"
+            alt="weather icon"
+            class="w-icon"
+          />
+          <div class="temp">Day - 35.6&#176; F</div>
+          <div class="temp">Night - 25.6&#176; F</div>
+        </div>
+      </div>
+    </div>
+    <!-- <script src="moment.js"></script> -->
+
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"
+    ></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+      integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="assets/JS/pro.js"></script>
+  </body>
+</html>
+
+<!-- ```
+GIVEN a weather dashboard with form inputs
+WHEN I search for a city
+THEN I am presented with current and future conditions for that city and 
+that city is added to the search history
+
+WHEN I view current weather conditions for that city
+THEN I am presented with the city name, the date, an icon representation of weather conditions, 
+the !!!!!!!!!! @ temperature, the humidity, the wind speed, and the UV index @ !!!!!!!!!!
+
+WHEN I view the UV index
+THEN I am presented with a color that indicates whether the conditions 
+are !!!!!!!!!!!!!!!! @ favorable, moderate, or severe @ !!!!!!!!!!!!!!!!!!
+
+WHEN I view future weather conditions for that city
+THEN I am presented with a 5-day forecast that displays the date, 
+an icon representation of weather conditions, the temperature, the wind speed, and the humidity
+
+WHEN I click on a city in the search history
+THEN I am again presented with current and future conditions for that city
+``` -->
